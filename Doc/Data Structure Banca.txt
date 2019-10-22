@@ -1,0 +1,35 @@
+- Entrate
+    - ID_Conto
+    - ID_Transazione
+    - Ammontare
+    - Causale
+    - Giorno
+    - Mese
+    - Anno
+    - Ora
+- Uscite
+    - ID_Conto
+    - ID_Transazione
+    - Ammontare
+    - Causale
+    - Giorno
+    - Mese
+    - Anno
+    - Ora
+- Conti
+    - ID_Conto
+    - ID_Utente
+    - IBAN
+    - Tipologia
+    - Saldo
+    - Spese
+- Utenti
+    - ID_Utente
+    - Nome
+    - Cognome
+
+
+Utilizzo l'ID_Conto per connettere le transazioni ai vari conti cosi da usare 2 tabelle: 1 per le entrate e 1 per le uscite; per collegare gli utenti al conto utilizzo l'ID_Utente quindi posso creare più conti collegati allo stesso ID_Utente
+
+
+
