@@ -20,7 +20,7 @@ namespace WindowsFormsApp10
         {
             InitializeComponent();
             carica();
-            creaConto.Visible = listaConti.Visible = ulist.Visible = prelievo.Visible = ricarica.Visible = false;
+            creaConto.Visible = listaConti.Visible = ulist.Visible = comboBox1.Visible = viewc.Visible = false;
             reloader();
         }
 
@@ -51,14 +51,31 @@ namespace WindowsFormsApp10
             {
                 Data d = new Data();
                 login_form.Visible = reg_form.Visible = false;
-                creaConto.Visible = listaConti.Visible = true;
+                creaConto.Visible = listaConti.Visible = comboBox1.Visible = viewc.Visible = true;
                 ctable();
+                cboxconti();
                 if (Login.UUID == "#B-BZ66G-P3")
                 {
                     ulist.Visible = true;
                     utable();
                 }
             }
+        }
+        private void cboxconti()
+        {
+            Data d = new Data();
+            MySqlCommand commandDatabase = new MySqlCommand("SELECT * FROM Conti WHERE ID_Utente = '" + Login.UUID + "'", d.databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            d.databaseConnection.Open();
+            MySqlDataReader reader = commandDatabase.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    comboBox1.Items.Add(reader.GetString(4));
+                }
+            }
+            this.comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         private void ctable()
         {
@@ -98,7 +115,6 @@ namespace WindowsFormsApp10
                 }
             }
         }
-
         private void carica()
         {
             for(int i = 0; i < 36; i++)
@@ -111,6 +127,22 @@ namespace WindowsFormsApp10
                 {
                     valori[i] = Convert.ToString((char)('a' + i - 10));
                 }
+            }
+        }
+
+        private void viewc_Click(object sender, EventArgs e)
+        {
+            Data d = new Data();
+            if(comboBox1.Text != "")
+            {
+                ViewConto vc = new ViewConto(Convert.ToString(d.fetch("SELECT * FROM Conti WHERE ID_Utente = '" + Login.UUID + "' AND Nome_conto = '" + comboBox1.Text + "'", 1)));
+                d.databaseConnection.Close();
+                this.Hide();
+                vc.Show();
+            }
+            else
+            {
+                MessageBox.Show("Seleziona un conto");
             }
         }
     }

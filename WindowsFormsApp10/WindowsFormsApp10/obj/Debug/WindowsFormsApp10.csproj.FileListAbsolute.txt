@@ -17,3 +17,5 @@ C:\Users\Dell\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\Windows
 C:\Users\Dell\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.Banca.resources
 C:\Users\Dell\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.Register.resources
 C:\Users\Dell\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.CreaConto.resources
+C:\Users\Dell\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.ViewConto.resources
+C:\Users\Dell\source\repos\WindowsFormsApp10\WindowsFormsApp10\obj\Debug\WindowsFormsApp10.Transazione.resources

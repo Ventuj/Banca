@@ -71,7 +71,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Vineta BT", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Snow;
-            this.label19.Location = new System.Drawing.Point(118, 19);
+            this.label19.Location = new System.Drawing.Point(133, 19);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(152, 51);
             this.label19.TabIndex = 118;

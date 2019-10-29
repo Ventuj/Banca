@@ -23,6 +23,7 @@ namespace WindowsFormsApp10
             commandDatabase.CommandTimeout = 60;
             databaseConnection.Open();
             MySqlDataReader reader = commandDatabase.ExecuteReader();
+            databaseConnection.Close();
         }
         public object cdb(string query)
         {
@@ -37,6 +38,16 @@ namespace WindowsFormsApp10
                 t = Convert.ToInt32(reader.GetString(0));
             }
             return t;
+        }
+        public object fetch(string query, int var)
+        {
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            databaseConnection.Open();
+            MySqlDataReader reader;
+            reader = commandDatabase.ExecuteReader();
+            reader.Read();
+            return reader.GetString(var);
         }
     }
 }

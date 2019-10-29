@@ -69,5 +69,22 @@ namespace WindowsFormsApp10
             }
             return cc.ToUpper();
         }
+        public string IDT()
+        {
+            string idt = "@";
+            Random rnd = new Random();
+            for (int i = 0; i < 16; i++)
+            {
+                if (idt.Length == 4 || idt.Length == 10)
+                {
+                    idt += "-";
+                }
+                else
+                {
+                    idt += valori[rnd.Next(0, 36)];
+                }
+            }
+            return idt.ToUpper();
+        }
     }
 }

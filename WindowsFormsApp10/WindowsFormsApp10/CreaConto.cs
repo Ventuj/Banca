@@ -34,7 +34,7 @@ namespace WindowsFormsApp10
         {
             Data d = new Data();
             GenData gd = new GenData();
-            d.db("INSERT INTO Conti(ID_Conto, ID_Utente, IBAN, Nome_Conto, Tipologia) VALUES('"+ gd.IDC() +"', '"+ Login.UUID +"', '" + gd.IBAN() + "', '" + lbl_nc.Text + "', '"+ comboBox1.Text +"')");
+            d.db("INSERT INTO Conti(ID_Conto, ID_Utente, IBAN, Nome_Conto, Tipologia, Saldo) VALUES('"+ gd.IDC() +"', '"+ Login.UUID +"', '" + gd.IBAN() + "', '" + lbl_nc.Text + "', '"+ comboBox1.Text +"', '0')");
             this.Close();
             Banca b = new Banca();
             b.Show();

@@ -12,7 +12,7 @@ namespace WindowsFormsApp10
 {
     public partial class Login : Form
     {
-        public static string UUID = "";
+        public static string UUID = "#B-BZ66G-P3";
         Banca banca;
         public Login()
         {

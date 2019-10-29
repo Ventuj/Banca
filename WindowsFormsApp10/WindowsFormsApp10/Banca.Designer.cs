@@ -34,8 +34,8 @@
             this.listaConti = new System.Windows.Forms.DataGridView();
             this.creaConto = new System.Windows.Forms.Button();
             this.ulist = new System.Windows.Forms.DataGridView();
-            this.prelievo = new System.Windows.Forms.Button();
-            this.ricarica = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.viewc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaConti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ulist)).BeginInit();
             this.SuspendLayout();
@@ -117,40 +117,37 @@
             this.ulist.Size = new System.Drawing.Size(770, 150);
             this.ulist.TabIndex = 119;
             // 
-            // prelievo
+            // comboBox1
             // 
-            this.prelievo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
-            this.prelievo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prelievo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.prelievo.ForeColor = System.Drawing.Color.White;
-            this.prelievo.Location = new System.Drawing.Point(188, 144);
-            this.prelievo.Name = "prelievo";
-            this.prelievo.Size = new System.Drawing.Size(162, 45);
-            this.prelievo.TabIndex = 120;
-            this.prelievo.Text = "Preleva";
-            this.prelievo.UseVisualStyleBackColor = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(488, 156);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(132, 24);
+            this.comboBox1.TabIndex = 120;
             // 
-            // ricarica
+            // viewc
             // 
-            this.ricarica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
-            this.ricarica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ricarica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.ricarica.ForeColor = System.Drawing.Color.White;
-            this.ricarica.Location = new System.Drawing.Point(356, 144);
-            this.ricarica.Name = "ricarica";
-            this.ricarica.Size = new System.Drawing.Size(162, 45);
-            this.ricarica.TabIndex = 121;
-            this.ricarica.Text = "Aggiungi";
-            this.ricarica.UseVisualStyleBackColor = false;
+            this.viewc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
+            this.viewc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.viewc.ForeColor = System.Drawing.Color.White;
+            this.viewc.Location = new System.Drawing.Point(626, 144);
+            this.viewc.Name = "viewc";
+            this.viewc.Size = new System.Drawing.Size(162, 45);
+            this.viewc.TabIndex = 121;
+            this.viewc.Text = "Visualizza";
+            this.viewc.UseVisualStyleBackColor = false;
+            this.viewc.Click += new System.EventHandler(this.viewc_Click);
             // 
             // Banca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(170)))), ((int)(((byte)(242)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 525);
-            this.Controls.Add(this.ricarica);
-            this.Controls.Add(this.prelievo);
+            this.Controls.Add(this.viewc);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.ulist);
             this.Controls.Add(this.creaConto);
             this.Controls.Add(this.listaConti);
@@ -171,10 +168,10 @@
         private System.Windows.Forms.Button reg_form;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button creaConto;
-        private System.Windows.Forms.Button prelievo;
-        private System.Windows.Forms.Button ricarica;
         public System.Windows.Forms.DataGridView listaConti;
         public System.Windows.Forms.DataGridView ulist;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button viewc;
     }
 }
 
