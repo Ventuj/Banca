@@ -35,14 +35,16 @@ namespace WindowsFormsApp10
         {
             Register register = new Register();
             this.Hide();
-            register.Show();
+            register.ShowDialog();
+            this.Show();
         }
 
         private void creaConto_Click(object sender, EventArgs e)
         {
             CreaConto c = new CreaConto();
             this.Hide();
-            c.Show();
+            c.ShowDialog();
+            this.Show();
         }
 
         private void reloader()
@@ -138,7 +140,8 @@ namespace WindowsFormsApp10
                 ViewConto vc = new ViewConto(Convert.ToString(d.fetch("SELECT * FROM Conti WHERE ID_Utente = '" + Login.UUID + "' AND Nome_conto = '" + comboBox1.Text + "'", 1)));
                 d.databaseConnection.Close();
                 this.Hide();
-                vc.Show();
+                vc.ShowDialog();
+                this.Show();
             }
             else
             {

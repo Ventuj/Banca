@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.value_text = new System.Windows.Forms.TextBox();
-            this.Closer = new System.Windows.Forms.Button();
             this.execute_transaction = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tipo = new System.Windows.Forms.ComboBox();
@@ -46,20 +45,6 @@
             this.value_text.Size = new System.Drawing.Size(120, 22);
             this.value_text.TabIndex = 0;
             this.value_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.value_text_KeyPress);
-            // 
-            // Closer
-            // 
-            this.Closer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
-            this.Closer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Closer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Closer.ForeColor = System.Drawing.Color.Snow;
-            this.Closer.Location = new System.Drawing.Point(359, 392);
-            this.Closer.Name = "Closer";
-            this.Closer.Size = new System.Drawing.Size(80, 30);
-            this.Closer.TabIndex = 130;
-            this.Closer.Text = "Chiudi";
-            this.Closer.UseVisualStyleBackColor = false;
-            this.Closer.Click += new System.EventHandler(this.Closer_Click_1);
             // 
             // execute_transaction
             // 
@@ -151,7 +136,6 @@
             this.Controls.Add(this.tipo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.execute_transaction);
-            this.Controls.Add(this.Closer);
             this.Controls.Add(this.value_text);
             this.Name = "Transazione";
             this.Text = "Transazione";
@@ -163,7 +147,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox value_text;
-        private System.Windows.Forms.Button Closer;
         private System.Windows.Forms.Button execute_transaction;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox tipo;

@@ -33,23 +33,31 @@ namespace WindowsFormsApp10
                     if(lbl_password.Text != "")
                     {
                         string uuid = gd.UUID();
-                        d.db("INSERT INTO Utenti(ID_Utente, Nome, Cognome, Password) VALUES('" + uuid + "', '" + lbl_user.Text + "', '" + lbl_cogn.Text + "', '" + h.Hashing(lbl_password.Text) + "')");
-                        lbl_cogn.Visible = lbl_user.Visible = lbl_password.Visible = label1.Visible = label2.Visible = label3.Visible = register_send.Visible = false;
+                        d.db("INSERT INTO Utenti(ID_Utente, Nome, Cognome, Password, NData) VALUES('" + uuid + "', '" + lbl_user.Text + "', '" + lbl_cogn.Text + "', '" + h.Hashing(lbl_password.Text) + "', '"+ NData.Text +"')");
+                        lbl_cogn.Visible = lbl_password.Visible = label1.Visible = label2.Visible = label3.Visible = register_send.Visible = label5.Visible = NData.Visible = false;
                         Login.UUID = uuid;
-                        MessageBox.Show("Registrazione Completata");
-                        this.Close();
-                        Banca b = new Banca();
-                        b.Show();
+                        MessageBox.Show("Registrazione Completata", "Informazioni", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lbl_user.Text = uuid;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password Non inserita", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Cognome non inserito", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nome non inserito", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void Closer_Click(object sender, EventArgs e)
+        private void homebtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            Banca b = new Banca();
-            b.Show();
         }
     }
 }

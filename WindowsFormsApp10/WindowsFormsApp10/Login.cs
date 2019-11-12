@@ -12,7 +12,7 @@ namespace WindowsFormsApp10
 {
     public partial class Login : Form
     {
-        public static string UUID = "#B-BZ66G-P3";
+        public static string UUID = ""; //#B-BZ66G-P3
         Banca banca;
         public Login()
         {
@@ -26,23 +26,33 @@ namespace WindowsFormsApp10
         {
             Data d = new Data();
             HashPSW h = new HashPSW();
-            string password = lbl_password.Text;
-            int cp = Convert.ToInt32(d.cdb("SELECT COUNT(*) FROM Utenti WHERE ID_Utente = '" + lbl_user.Text + "' AND Password = '"+ h.Hashing(password) +"'"));
-            if(cp == 1)
+            if(lbl_user.Text != "")
             {
-                UUID = lbl_user.Text;
-                MessageBox.Show("Login Corretto");
-                this.Close();
-                Banca b = new Banca();
-                b.Show();
+                if(lbl_password.Text != "")
+                {
+                    int cp = Convert.ToInt32(d.cdb("SELECT COUNT(*) FROM Utenti WHERE ID_Utente = '" + lbl_user.Text + "' AND Password = '" + h.Hashing(lbl_password.Text) + "'"));
+                    if (cp == 1)
+                    {
+                        UUID = lbl_user.Text;
+                        MessageBox.Show("Login avvenuto correttamente", "Informazioni", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Banca b = new Banca();
+                        this.Hide();
+                        b.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password o Utente errato", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Password Non inserita", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-        }
-
-        private void Closer_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Banca b = new Banca();
-            b.Show();
+            else
+            {
+                MessageBox.Show("Codice Utente Non inserito", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -51,9 +51,7 @@ namespace WindowsFormsApp10
                     Type = 0;
                 }
             }
-            string giorno = DateTime.Now.Day.ToString();
-            string mese = DateTime.Now.Month.ToString();
-            string anno = DateTime.Now.Year.ToString();
+            string data = Convert.ToString(gd.converter(DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString()));
             string ora;
             if (DateTime.Now.Hour.ToString().Length < 2)
             {
@@ -71,21 +69,21 @@ namespace WindowsFormsApp10
             {
                 ora += ":" + DateTime.Now.Minute.ToString();
             }
-            //insert transaction
-            d.db("INSERT INTO Transazioni(ID_Conto, ID_Transazione, Ammontare, Causale, Giorno, Mese, Anno, Ora, Type) VALUES('" + id + "', '"+ gd.IDT() +"', '" + value_text.Text + "', '" + causale_txt.Text + "', '"+ giorno + "', '"+ mese +"', '"+ anno +"', '"+ ora +"', '"+ Type +"')");
             if (Type == 1)
             {
                 double conto = Convert.ToDouble(d.fetch("SELECT * FROM Conti WHERE ID_Conto = '" + id + "'", 6));
                 d.databaseConnection.Close();
-                double ponte = conto - Convert.ToDouble(value_text.Text);
+                double ponte = conto - (Convert.ToDouble(value_text.Text) + d.getContoCom(id));
                 d.db("UPDATE Conti SET Saldo = '" + ponte  + "' WHERE ID_Conto = '"+ id + "'");
+                d.db("INSERT INTO Transazioni(ID_Conto, ID_Transazione, Ammontare, Causale, Data, Ora, Type) VALUES('" + id + "', '" + gd.IDT() + "', '" + (Convert.ToInt32(value_text.Text) + d.getContoCom(id)) + "', '" + causale_txt.Text + "', '" + data + "', '" + ora + "', '" + Type + "')");
             }
             else
             {
                 double conto = Convert.ToDouble(d.fetch("SELECT * FROM Conti WHERE ID_Conto = '" + id + "'", 6));
                 d.databaseConnection.Close();
-                double ponte = conto + Convert.ToDouble(value_text.Text);
+                double ponte = conto + (Convert.ToDouble(value_text.Text) - d.getContoCom(id));
                 d.db("UPDATE Conti SET Saldo = '" + ponte + "' WHERE ID_Conto = '" + id + "'");
+                d.db("INSERT INTO Transazioni(ID_Conto, ID_Transazione, Ammontare, Causale, Data, Ora, Type) VALUES('" + id + "', '" + gd.IDT() + "', '" + (Convert.ToInt32(value_text.Text) - d.getContoCom(id)) + "', '" + causale_txt.Text + "', '" + data + "', '" + ora + "', '" + Type + "')");
             }
             MessageBox.Show("Transazione Completata con successo");
             this.Close();

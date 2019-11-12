@@ -32,7 +32,6 @@
             this.lbl_user = new System.Windows.Forms.TextBox();
             this.login_send = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.Closer = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             // 
             this.lbl_password.Location = new System.Drawing.Point(118, 245);
             this.lbl_password.Name = "lbl_password";
+            this.lbl_password.PasswordChar = '*';
             this.lbl_password.Size = new System.Drawing.Size(167, 22);
             this.lbl_password.TabIndex = 15;
             // 
@@ -76,20 +76,6 @@
             this.label19.Size = new System.Drawing.Size(152, 51);
             this.label19.TabIndex = 118;
             this.label19.Text = "VNB";
-            // 
-            // Closer
-            // 
-            this.Closer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
-            this.Closer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Closer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Closer.ForeColor = System.Drawing.Color.White;
-            this.Closer.Location = new System.Drawing.Point(333, 412);
-            this.Closer.Name = "Closer";
-            this.Closer.Size = new System.Drawing.Size(80, 30);
-            this.Closer.TabIndex = 119;
-            this.Closer.Text = "Chiudi";
-            this.Closer.UseVisualStyleBackColor = false;
-            this.Closer.Click += new System.EventHandler(this.Closer_Click);
             // 
             // label2
             // 
@@ -133,7 +119,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Closer);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_user);
@@ -150,7 +135,6 @@
         private System.Windows.Forms.TextBox lbl_user;
         private System.Windows.Forms.Button login_send;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button Closer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;

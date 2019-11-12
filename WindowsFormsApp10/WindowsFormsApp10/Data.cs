@@ -16,7 +16,7 @@ namespace WindowsFormsApp10
 {
     class Data
     {
-        public MySqlConnection databaseConnection = new MySqlConnection("");
+        public MySqlConnection databaseConnection = new MySqlConnection("datasource=;port=3306;username=;password=; database=;");
         public void db(string query)
         {
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -48,6 +48,30 @@ namespace WindowsFormsApp10
             reader = commandDatabase.ExecuteReader();
             reader.Read();
             return reader.GetString(var);
+        }
+        public int getContoCom(string id)
+        {
+            MySqlCommand commandDatabase = new MySqlCommand("SELECT * FROM Conti WHERE ID_Conto = '"+ id +"'", databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            databaseConnection.Open();
+            MySqlDataReader reader;
+            reader = commandDatabase.ExecuteReader();
+            reader.Read();
+            int type = 0;
+            switch (reader.GetString(5))
+            {
+                case "Young":
+                    type = 1;
+                    break;
+                case "Normal":
+                    type = 2;
+                    break;
+                case "Old":
+                    type = 0;
+                    break;
+            }
+            databaseConnection.Close();
+            return type;
         }
     }
 }

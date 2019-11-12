@@ -34,8 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Closer = new System.Windows.Forms.Button();
             this.build_conto = new System.Windows.Forms.Button();
+            this.btn_info = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -54,7 +54,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(154, 164);
+            this.label2.Location = new System.Drawing.Point(154, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 20);
             this.label2.TabIndex = 124;
@@ -62,7 +62,7 @@
             // 
             // lbl_nc
             // 
-            this.lbl_nc.Location = new System.Drawing.Point(126, 187);
+            this.lbl_nc.Location = new System.Drawing.Point(126, 155);
             this.lbl_nc.Name = "lbl_nc";
             this.lbl_nc.Size = new System.Drawing.Size(167, 22);
             this.lbl_nc.TabIndex = 123;
@@ -72,7 +72,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(140, 225);
+            this.label1.Location = new System.Drawing.Point(140, 193);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 20);
             this.label1.TabIndex = 125;
@@ -81,7 +81,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 259);
+            this.comboBox1.Location = new System.Drawing.Point(126, 227);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(167, 24);
             this.comboBox1.TabIndex = 126;
@@ -91,25 +91,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(124, 115);
+            this.label3.Location = new System.Drawing.Point(124, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 32);
             this.label3.TabIndex = 127;
             this.label3.Text = "Crea Conto";
-            // 
-            // Closer
-            // 
-            this.Closer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
-            this.Closer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Closer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Closer.ForeColor = System.Drawing.Color.Snow;
-            this.Closer.Location = new System.Drawing.Point(332, 416);
-            this.Closer.Name = "Closer";
-            this.Closer.Size = new System.Drawing.Size(80, 30);
-            this.Closer.TabIndex = 129;
-            this.Closer.Text = "Chiudi";
-            this.Closer.UseVisualStyleBackColor = false;
-            this.Closer.Click += new System.EventHandler(this.Closer_Click);
             // 
             // build_conto
             // 
@@ -117,7 +103,7 @@
             this.build_conto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.build_conto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.build_conto.ForeColor = System.Drawing.Color.White;
-            this.build_conto.Location = new System.Drawing.Point(126, 310);
+            this.build_conto.Location = new System.Drawing.Point(126, 278);
             this.build_conto.Name = "build_conto";
             this.build_conto.Size = new System.Drawing.Size(167, 44);
             this.build_conto.TabIndex = 128;
@@ -125,13 +111,27 @@
             this.build_conto.UseVisualStyleBackColor = false;
             this.build_conto.Click += new System.EventHandler(this.build_conto_Click);
             // 
+            // btn_info
+            // 
+            this.btn_info.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
+            this.btn_info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_info.ForeColor = System.Drawing.Color.White;
+            this.btn_info.Location = new System.Drawing.Point(126, 328);
+            this.btn_info.Name = "btn_info";
+            this.btn_info.Size = new System.Drawing.Size(167, 44);
+            this.btn_info.TabIndex = 130;
+            this.btn_info.Text = "Informazioni";
+            this.btn_info.UseVisualStyleBackColor = false;
+            this.btn_info.Click += new System.EventHandler(this.btn_info_Click);
+            // 
             // CreaConto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(170)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(425, 454);
-            this.Controls.Add(this.Closer);
+            this.Controls.Add(this.btn_info);
             this.Controls.Add(this.build_conto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
@@ -154,7 +154,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Closer;
         private System.Windows.Forms.Button build_conto;
+        private System.Windows.Forms.Button btn_info;
     }
 }
